@@ -1,0 +1,29 @@
+proxies:
+  - name: "🇸🇬SG-Vmess(Do) 1.5x"
+    type: vmess
+    server: 46.3.105.12
+    port: 12018
+    uuid: 6f10ecfc-ec76-45be-8e81-6407b71c06d2
+    alterId: 0
+    cipher: auto
+    tls: true
+    servername: sgw2ntls0817.crvesoft.top
+    sni: sgw2ntls0817.crvesoft.top
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: sgw2ntls0817.crvesoft.top
+    udp: true
+    skip-cert-verify: true
+
+proxy-groups:
+  - name: "🚀 Proxy"
+    type: select
+    proxies:
+      - "🇸🇬SG-Vmess(Do) 1.5x"
+      - DIRECT
+      - REJECT
+
+rules:
+  - MATCH,🚀 Proxy
